@@ -1,7 +1,9 @@
 import { Router } from "express";
-import { addMember } from "./requestHandler.js";
+import { addMember, signin } from "./requestHandler.js";
 const router=Router()
 
 router.route("/addData").post(addMember)
+router.route("/signin").post(signin)
+
 
 export default router
