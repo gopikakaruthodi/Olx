@@ -14,7 +14,7 @@ async function getProfile() {
                 </div>
                 <div class="e-doc">
                     <h4>${product.pname}</h4>
-                    <div class="prices"><span class="price" style="margin-top: 10px;">${product.price}</span></div>
+                    <div class="prices"><span class="price" style="margin-top: 10px;">₹${product.price}</span></div>
                 </div>
                 
             </div></a>`

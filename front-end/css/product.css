@@ -15,7 +15,7 @@
  margin-left: 30px;
   margin-right: 30px;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
  
 }
 
@@ -46,9 +46,9 @@
 
   }
   .pro-pic img{
-    width: 20rem;
-    height: 22rem;
-    margin: 70px 20px;
+    width: 32rem;
+    height: 30rem;
+    margin-top: 8px;
   }
 
   .pro-content{

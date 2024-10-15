@@ -12,6 +12,7 @@ router.route("/getProductdetails/:_id").get(rh.getProductDetails)
 router.route("/updateuser/:_id").put(rh.updateUser)
 router.route("/addproduct").post(rh.addProducts)
 router.route("/deleteuser/:_id").delete(rh.deleteUser)
+router.route("/deleteuser/:_id").delete(rh.deleteUser)
 
 
 

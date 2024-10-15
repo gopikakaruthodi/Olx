@@ -91,8 +91,8 @@ a{
   }
    .e-card img{
      
-     width: 12em;
-     height: 11em;
+     width: 15em;
+     height: 12em;
      /* padding-right: 5px; */
      background-position: center;
      object-fit: cover;
@@ -117,7 +117,7 @@ a{
      .e-doc h4{
      color:black;
      padding-top: 2px;
-     font-size: 18px;
+     font-size: 23px;
      font-weight: lighter;
      margin-bottom: 5px;
  

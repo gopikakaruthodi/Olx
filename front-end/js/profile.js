@@ -38,7 +38,7 @@ async function getUser(){
                 console.log(product);
                 
                 str+=`
-                <a href="./pages/product.html"><div class="e-card">
+                <a href="./product.html?id=${product._id}"><div class="e-card">
                     <div class="e-img">
                         <img src="${product.images[0]}" alt="">
                     </div>
