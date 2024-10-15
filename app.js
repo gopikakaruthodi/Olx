@@ -7,7 +7,7 @@ import router from "./router.js"
 env.config()
 const app=express()
 
-app.use(express.json())
+app.use(express.json({limit:"50mb"}))
 app.use(express.static('front-end'))
 app.use("/api",router)
 
