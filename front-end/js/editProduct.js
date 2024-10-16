@@ -2,52 +2,61 @@ const url=window.location.href
 const urlParams=new URLSearchParams(url.split("?")[1])
 const id=urlParams.get("id")
 // console.log(id);
-let images
+let images=[]
+let sellerId
 
 async function editProduct() {
     const res=await fetch(`http://localhost:3003/api/getProductdetails/${id}`)
     const product=await res.json()
     console.log(product);
 
-    document.getElementById("forms").innerHTML=`<div class="form-group">
-                <label for="pname">Product Name:</label>
-                <input type="text" id="pname" name="pname" value="${product.pname}">
-            </div>
-            <div class="form-group">
-                <label for="price">Price:</label>
-                <input type="text" id="price" name="price" value="${product.price}">
-            </div>
-            <div class="form-group">
-                <label for="category">Category:</label>
-                <select id="category" name="category" >
-                    <option value="${product.pname}">${product.category}</option>
-                    <option value="vehicle">VEHICLE</option>
-                    <option value="electronics">ELECTRONICS</option>
-                    <option value="pets">PETS</option>
-                    <option value="homes">HOMES</option>
-                    <option value="land">LAND</option>
-                    <option value="furniture">FURNITURE</option>
-                    <option value="books">BOOKS</option>
-                    <option value="fashion">FASHION</option>
-                </select>
-            </div>
-           
-            <div class="form-group">
-                <label for="description">Description:</label>
-                <textarea id="description" name="description" >${product.description}"</textarea>
-            </div>
-            
-            <div class="form-group">
-                <label for="images">Product Images:</label>
-                <input type="file" id="images" name="images"  multiple>
-            </div>
-            <div id="pro">
+    images=product.images;
+    document.getElementById("pname").value=product.pname;
+    document.getElementById("category").value=product.category;
+    document.getElementById("price").value=product.price;
+    document.getElementById("description").innerText=product.description;
+    sellerId=product.sellerId;
+    product.images.map((image)=>{
+        const data=document.createElement("img");
+        data.src=image;
+        document.getElementById("pro").appendChild(data);
+    })
 
-            </div>
-            <button type="submit">Edit Product</button>`
+
     
 }
 editProduct()
+
+document.getElementById("forms").addEventListener("submit",async(e)=>{
+    e.preventDefault()
+    const pname=document.getElementById("pname").value;
+    const price=parseInt(document.getElementById("price").value);
+    const category=document.getElementById("category").value;
+    const description=document.getElementById("description").value;
+    
+
+    await fetch(`http://localhost:3003/api/updateproduct/${id}`,{
+        method:"PUT",
+        headers:{"Content-Type":"application/json"},
+        body:JSON.stringify({pname,price,category,description,sellerId,images})
+    }).then(async(res)=>{
+        console.log(res);
+        const data= await res.json()
+        if(res.status==201){
+            alert(data.msg)
+            window.location.href="../index.html"
+        }
+        else{
+            alert(data.msg)
+        }  
+    }).catch((error)=>{
+        alert(error)
+
+    })
+
+})
+
+
 
 document.getElementById("images").addEventListener('change',(e)=>{
     const arr=Object.values(document.getElementById("images").files)

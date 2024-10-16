@@ -71,7 +71,7 @@ a{
     height: 50vh;
      display: flex;
      flex-wrap: wrap;
-     /* margin: 0px 30px;  */
+     margin: 0px 30px; 
      padding-top: 2%;
      /* border: 1px solid greenyellow; */
      align-items: center;
@@ -81,7 +81,7 @@ a{
 .e-card{
     /* border: 1px solid grey; */
     padding: 15px;
-    margin: 8px;
+    margin: 18px;
     /* text-align: center; */
     box-shadow:  rgba(0, 0, 0, 0.40) 0px 5px 15px;
     width: 240px;

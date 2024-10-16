@@ -151,3 +151,36 @@ export async function getProductDetails(req,res) {
 
     
 }
+export async function updateProduct(req,res) {
+    try {
+        const _id=req.params
+        const {...product}=req.body
+        await productSchema.updateOne({_id},{$set:{...product}}).then(()=>{
+            res.status(201).send({msg:"Successfully Updated"})
+        }).catch((error)=>{
+           res.status(404).send({msg:error})
+        })
+        
+        
+    } catch (error) {
+        console.log(error);
+        
+        
+    }
+
+    
+}
+export async function deleteProduct(req,res) {
+    try {
+        const _id=req.params
+        console.log(_id);
+        
+        await productSchema.deleteOne({_id}).then(()=>{
+            res.status(200).send({msg:"Successfully Deleted"})
+        }).catch((error)=>{
+            res.status(404).send({msg:error})
+        })
+    } catch (error) {
+        console.log(error);    
+    }   
+}
