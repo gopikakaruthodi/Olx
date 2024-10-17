@@ -184,3 +184,12 @@ export async function deleteProduct(req,res) {
         console.log(error);    
     }   
 }
+
+export async function getProductss(req,res) {
+    try {
+        const products=await productSchema.find();
+        res.status(200).send(products)
+    } catch (error) {
+        res.status(404).send({msg:"error"})
+    }
+}

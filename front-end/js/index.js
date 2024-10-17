@@ -4,11 +4,12 @@ async function getProfile() {
     const res=await fetch("http://localhost:3003/api/getProducts",{headers:{
         "authorization" : `Bearer ${token}`}})
         console.log(res);
-        const data=await res.json()
+        if(res.status==200){
+            const data=await res.json()
         console.log(data);
         str=``
         data.products.map((product)=>{
-            str+=`<a href="./pages/product.html?id=${product._id}"><div class="e-card">
+            str+=`<a href="./pages/allProducts.html?id=${product._id}"><div class="e-card">
                 <div class="e-img">
                     <img src="${product.images[0]}" alt="">
                 </div>
@@ -33,6 +34,7 @@ async function getProfile() {
             </div>`
         }
 
+        }
     }
 
 getProfile()
@@ -52,6 +54,34 @@ window.addEventListener('click', (event) => {
 function logOut(){
     localStorage.removeItem("Token")
     window.location.reload()
+}
+
+
+
+async function search(e) {
+    try {
+        const res=await fetch(`http://localhost:3003/api/getproductss`);
+        const products=await res.json();
+        str=``;
+        products.filter((i)=>i.pname.toLowerCase().includes(e.value.toLowerCase())).map((product)=>{
+            str+=`
+            <a href="./pages/allProducts.html?id=${product._id}"><div class="e-card">
+                <div class="e-img">
+                    <img src="${product.images[0]}" alt="">
+                </div>
+                <div class="e-doc">
+                    <h4>${product.pname}</h4>
+                    <div class="prices"><span class="price" style="margin-top: 10px;">₹${product.price}</span></div>
+                </div>
+                
+            </div></a>
+        `
+        })
+
+        document.getElementById("cards").innerHTML=str;
+    } catch (error) {
+        console.log(error);
+    }
 }
 
 

@@ -38,17 +38,16 @@
   .pro-pic{
     width: 36em;
     height: 32rem;
-    /* position: absolute; */
-    /* top: 3%;
-    left: 9%; */
+
     box-shadow:  rgba(0, 0, 0, 0.40) 0px 5px 16px ;
     text-align: center;
+    margin-bottom: 10px;
 
   }
   .pro-pic img{
-    width: 32rem;
-    height: 30rem;
-    margin-top: 8px;
+    width: 36rem;
+    height: 32rem;
+    object-fit: cover;
   }
 
   .pro-content{
@@ -148,6 +147,7 @@
   .head-img{
    width: 100px;
     color: white;
+    object-fit: cover;
   }
 
   #products1{
@@ -218,6 +218,8 @@ margin-left: 10px;
 .pro-card img{
   width: 3rem;
   height: 3rem;
+  object-fit: cover;
+
 }
 
 .pro-pic{
@@ -229,6 +231,8 @@ margin-left: 10px;
 .pro-pic img{
   width: 10rem;
   height: 12rem;
+  object-fit: cover;
+
 }
 
 .pro-content{
@@ -301,6 +305,8 @@ margin-left: 10px;
 .head-img{
  width: 100px;
   color: white;
+  object-fit: cover;
+
 }
 
 
@@ -337,6 +343,8 @@ margin-left: 10px;
  .pro-card img{
    width: 3rem;
    height: 3rem;
+   object-fit: cover;
+
  }
 
  .pro-pic{
@@ -348,6 +356,8 @@ margin-left: 10px;
  .pro-pic img{
    width: 10rem;
    height: 12rem;
+   object-fit: cover;
+
  }
 
  .pro-content{
@@ -420,6 +430,8 @@ margin-left: 10px;
  .head-img{
   width: 100px;
    color: white;
+   object-fit: cover;
+
  }
 
 

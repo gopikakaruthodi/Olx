@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=favorite" />
     <link rel="stylesheet" href="./css/index.css">
 </head>
 <body>
@@ -13,14 +14,17 @@
                 <img src="./images/olx-logo.avif" alt="">
             </div>     
             <div class="nav-content">
-                <input type="search" class="search" id="search" placeholder="Find Cars,Mobile Phones and More.."> 
+                <input type="search" class="search" id="search" onkeyup="search(this)" placeholder="Find Cars,Mobile Phones and More.."> 
                 <img src="./images/search-icon.png" alt=""> 
             </div>
             <div  class="container" id="profile">
                 <a href="./pages/signin.html"><h4 class="login">Login</h4></a>
             </div>
+            <a href="./pages/addToWishlist.html">
+                <span class="material-symbols-outlined" style="color: black;">favorite</span>
+            </a>
             <div id="sell">
-
+                <button class="sell-button">+ SELL</button>
             </div>
         </div>
         <div class="cards" id="cards">

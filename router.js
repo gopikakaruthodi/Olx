@@ -15,6 +15,9 @@ router.route("/deleteuser/:_id").delete(rh.deleteUser)
 router.route("/updateproduct/:_id").put(rh.updateProduct)
 router.route("/deleteproduct/:_id").delete(rh.deleteProduct)
 
+router.route("/getproductss").get(rh.getProductss);
+
+
 
 
 

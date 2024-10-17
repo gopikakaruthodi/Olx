@@ -48,6 +48,7 @@ a{
     position: absolute;
     top: 10px;
     right: 20px;
+    object-fit: cover;
 
 
 }
@@ -94,12 +95,9 @@ a{
      width: 15em;
      height: 12em;
      /* padding-right: 5px; */
-     background-position: center;
+     /* background-position: center; */
      object-fit: cover;
      background-size: cover;
-     
-     
-  
      
   }
   .e-doc{
@@ -198,6 +196,7 @@ a{
         height: 100%;
         width: 100%;
         border-radius: 50%;
+        object-fit: cover;
     }
     
     .dropdown {
