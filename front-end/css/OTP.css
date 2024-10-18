@@ -1,0 +1,66 @@
+/* style.css */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 20vh;
+}
+
+.input {
+    width: 40px;
+    border: none;
+    border-bottom: 3px solid rgba(0, 0, 0, 0.5);
+    margin: 0 10px;
+    text-align: center;
+    font-size: 36px;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+.input:focus {
+    border-bottom: 3px solid orange;
+    outline: none;
+}
+
+.input:nth-child(1) {
+    cursor: pointer;
+    pointer-events: all;
+}
+
+.material-symbols-outlined{
+    width: 100%;
+    color: green;
+    font-size: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 100px;
+
+}
+h3{
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+}
+p{
+    color: grey;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+
+}
+
+.verify{
+    display: grid;
+    align-items: center;
+    justify-content: center; 
+}
+#verify{
+    margin-top: 20px;
+    padding: 15px 45px;
+    background-color: rgb(18, 70, 18);
+    color: antiquewhite;
+    border: none;
+    border-radius: 5px;
+}

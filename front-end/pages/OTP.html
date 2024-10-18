@@ -1,0 +1,33 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>OTP Input</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=mail" />
+    <link rel="stylesheet" href="../css/OTP.css" />
+</head>
+
+<body>
+    <div><span class="material-symbols-outlined">mail</span></div>
+    <h3>Please Check Your Email</h3>
+    <p>Enter your 6 digit OTP number</p>
+    
+
+    <div class="container">
+        <div id="inputs" class="inputs">
+            <input class="input" type="text" inputmode="numeric" maxlength="1" id="otp1" />
+            <input class="input" type="text" inputmode="numeric" maxlength="1" id="otp2"/>
+            <input class="input" type="text" inputmode="numeric" maxlength="1" id="otp3"/>
+            <input class="input" type="text" inputmode="numeric" maxlength="1" id="otp4"/>
+            <input class="input" type="text" inputmode="numeric" maxlength="1" id="otp5"/>
+            <input class="input" type="text" inputmode="numeric" maxlength="1" id="otp6"/>
+        </div>
+    </div>
+    <div class="verify"><button id="verify" onclick="verifyOTP()">VERIFY</button></div>
+    
+    <script src="../js/OTP.js"></script>
+</body>
+
+</html>

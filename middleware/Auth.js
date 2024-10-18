@@ -4,6 +4,8 @@ export default async function Auth(req,res,next) {
    try {
      // console.log(req.headers);
      const key=req.headers.authorization
+     if(!key)
+      return res.status(403).send("Unautherized Access")
      // console.log(key);
      const token=key.split(" ")[1] 
      // console.log(token);

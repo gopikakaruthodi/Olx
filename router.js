@@ -6,7 +6,7 @@ const router=Router()
 router.route("/signup").post(rh.signup)
 router.route("/signin").post(rh.signin)
 router.route("/getuser/:_id").get(rh.getUser)
-router.route("/getusers").get(rh.getUsers)
+// router.route("/getusers").get(rh.getUsers)
 router.route("/getProducts").get(Auth,rh.getProducts)
 router.route("/getProductdetails/:_id").get(rh.getProductDetails)
 router.route("/updateuser/:_id").put(rh.updateUser)
@@ -16,6 +16,9 @@ router.route("/updateproduct/:_id").put(rh.updateProduct)
 router.route("/deleteproduct/:_id").delete(rh.deleteProduct)
 
 router.route("/getproductss").get(rh.getProductss);
+router.route("/otp").post(rh.generateOTP);
+router.route("/compareotp").post(rh.compareOTP);
+router.route("/changepassword").post(rh.changePassword);
 
 
 
