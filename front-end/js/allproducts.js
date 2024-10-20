@@ -4,6 +4,7 @@ const id=urlParams.get("id")
 console.log(id);
 
 
+
 async function getProduct() {
     const res=await fetch(`http://localhost:3003/api/getProductdetails/${id}`)
     const product=await res.json()
@@ -17,7 +18,7 @@ async function getProduct() {
     })
 
     document.getElementById("card").innerHTML=str
-    document.getElementById("button").innerHTML=` <a href="./addToWishlist.html?id=${product._id}"><button  class="last-btn2">ADD TO WISHLIST</button></a>`
+    document.getElementById("button").innerHTML=`<button  class="last-btn2" onclick="wishlist('${product._id}')">ADD TO WISHLIST</button>`
 
     document.getElementById("img").src=`${product.images[0]}`
     document.getElementById("category").textContent=`${product.category.toUpperCase()}`
@@ -32,6 +33,33 @@ getProduct()
 
 function changeImg(img){
     document.getElementById("img").src=img
+
+}
+
+async function wishlist(id){
+    loca
+    const res=await fetch(`http://localhost:3003/api/getProductdetails/${id}`)
+    const product=await res.json()
+
+    const buyerId=product.sellerId
+    console.log(product);
+    await fetch("http://localhost:3003/api/addwish",{
+        method:"POST",
+        headers:{"Content-Type":"application/json"},
+        body:JSON.stringify({buyerId,product})
+    }).then(async(res)=>{
+        const data=await res.json()
+        if(res.status==201){
+            alert(data.msg)
+        }
+        else{
+            alert("enable to add")
+        }
+    }).catch((error)=>{
+        console.log(error);
+        
+    })
+
 
 }
 

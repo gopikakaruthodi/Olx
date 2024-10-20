@@ -1,5 +1,6 @@
 import userSchema from "./models/user.model.js"
 import productSchema from "./models/product.model.js"
+import wishSchema from "./models/wish.model.js"
 import bcrypt from "bcrypt"
 import jwt from "jsonwebtoken"
 import nodemailer from "nodemailer"
@@ -211,6 +212,48 @@ export async function getProductss(req,res) {
         res.status(404).send({msg:"error"})
     }
 }
+
+export async function addWish(req,res) {
+    try {
+        const{...data}=req.body
+        // console.log(data);
+        
+        await wishSchema.create({...data}).then(()=>{
+            res.status(201).send({msg:"Added to wishlist"})
+        }).catch((error)=>{
+            res.status(404).send({msg:error})
+        })   
+    } catch (error) {
+        console.log(error);   
+    }
+}
+
+export async function getWish(req,res) {
+    try {
+        const wish=await wishSchema.find();
+        // console.log(wish);
+        res.status(200).send(wish)
+    } catch (error) {
+        res.status(404).send({msg:"error"})
+    }
+}
+
+export async function deleteWish(req,res) {
+    try {
+        const _id=req.params
+        // console.log(_id);
+        
+        await wishSchema.deleteOne({_id}).then(()=>{
+            res.status(200).send({msg:"Successfully Deleted"})
+        }).catch((error)=>{
+            res.status(404).send({msg:error})
+        })
+    } catch (error) {
+        console.log(error);    
+    }   
+}
+
+
 
 
 // otp generation code

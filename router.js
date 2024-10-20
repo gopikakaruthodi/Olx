@@ -14,6 +14,10 @@ router.route("/addproduct").post(rh.addProducts)
 router.route("/deleteuser/:_id").delete(rh.deleteUser)
 router.route("/updateproduct/:_id").put(rh.updateProduct)
 router.route("/deleteproduct/:_id").delete(rh.deleteProduct)
+router.route("/addwish").post(rh.addWish)
+router.route("/getwish").get(rh.getWish)
+router.route("/deletewish/:_id").delete(rh.deleteWish)
+
 
 router.route("/getproductss").get(rh.getProductss);
 router.route("/otp").post(rh.generateOTP);
