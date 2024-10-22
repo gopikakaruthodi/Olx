@@ -132,6 +132,7 @@ export async function updateUser(req,res) {
 export async function addProducts(req,res) {
     const{...product}=req.body
     await productSchema.create({...product}).then(()=>{
+        
         res.status(201).send({msg:"Success"})
 
     }).catch((error)=>{

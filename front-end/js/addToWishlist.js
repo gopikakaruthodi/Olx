@@ -14,7 +14,7 @@ async function getWishlist() {
                 <div class="e-doc">
                     <h4>${item.product.pname}</h4>
                     <div class="prices"><span class="price" style="margin-top: 10px;">₹${item.product.price}</span></div>
-                    <button onclick="deleteWish('${item._id}')" class="btn">Delete</button>
+                    <button onclick="deleteWish('${item._id}','${item.product._id}')" class="btn">Delete</button>
                 </div>
 
                 
@@ -28,7 +28,7 @@ async function getWishlist() {
 
 getWishlist()
 
-async function deleteWish(id) {
+async function deleteWish(id,pid) {
     console.log(id);
     if(confirm("Do you want to delete the product from wishlist?")){
         await fetch(`http://localhost:3003/api/deletewish/${id}`,{
@@ -37,7 +37,8 @@ async function deleteWish(id) {
             const data=await res.json()
             if(res.status==200){
                 alert(data.msg)
-                window.location.reload()
+                localStorage.removeItem(pid)
+                window.location.href="../index.html"
             } 
             else{
                 alert("cannot delete the user")

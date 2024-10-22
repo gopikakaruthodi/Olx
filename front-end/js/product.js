@@ -16,6 +16,7 @@ async function getProduct() {
 
     })
 
+
     document.getElementById("card").innerHTML=str
     document.getElementById("button").innerHTML=` <a href="./editProduct.html?id=${product._id}"><button  class="last-btn2">EDIT</button></a>
             <button  class="last-btn2" onclick="deleteProduct('${product._id}')">DELETE</button>`
@@ -58,8 +59,5 @@ async function deleteProduct(id) {
     
 }
 
-async function wishlist(id) {
-    
-    
-}
+
 
