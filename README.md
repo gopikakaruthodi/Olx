@@ -14,9 +14,7 @@
 * [Philosophy](#Philosophy)
 * [Examples](#Examples)
 * [Contributing to Express](#Contributing)
-* [TC (Technical Committee)](#tc-technical-committee)
-* [Triagers](#triagers)
-* [License](#license)
+
 
 
 [![NPM Version][npm-version-image]][npm-url]
